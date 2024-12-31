@@ -1,0 +1,27 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+canvas {
+    border: 1px solid black;
+    margin-top: 20px;
+}
+
+#colorInfo {
+    margin-top: 20px;
+}
+
+#colorPalette {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#colorPalette div {
+    width: 50px;
+    height: 50px;
+    margin: 0 5px;
+}
