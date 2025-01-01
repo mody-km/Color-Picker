@@ -1,27 +1,71 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
     text-align: center;
     margin: 0;
     padding: 20px;
 }
 
+h1 {
+    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+/* Center the container and stack elements vertically */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* File input styling */
+input[type="file"] {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="file"]:hover {
+    background-color: #2980b9;
+}
+
+/* Style the canvas */
 canvas {
     border: 1px solid black;
     margin-top: 20px;
+    max-width: 100%;
+    width: auto;
+    height: auto;
 }
 
+/* Color information styling */
 #colorInfo {
-    margin-top: 20px;
+    margin-top: 30px;
+    font-size: 1.2em;
+    color: #555;
 }
 
+/* Color palette layout */
 #colorPalette {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
 }
 
 #colorPalette div {
     width: 50px;
     height: 50px;
-    margin: 0 5px;
+    margin: 5px;
+    border-radius: 5px;
+    transition: transform 0.3s;
+}
+
+#colorPalette div:hover {
+    transform: scale(1.1);
 }
