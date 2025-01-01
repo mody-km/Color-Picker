@@ -1,4 +1,3 @@
-
 document.getElementById('imageInput').addEventListener('change', function (event) {
     const file = event.target.files[0];
     if (file) {
@@ -6,9 +5,26 @@ document.getElementById('imageInput').addEventListener('change', function (event
         img.onload = function () {
             const canvas = document.getElementById('imageCanvas');
             const ctx = canvas.getContext('2d');
-            canvas.width = img.width;
-            canvas.height = img.height;
-            ctx.drawImage(img, 0, 0);
+            
+            // Resize image to fit into a max-width of 600px while preserving aspect ratio
+            const maxWidth = 900;
+            const aspectRatio = img.width / img.height;
+            let newWidth = maxWidth;
+            let newHeight = newWidth / aspectRatio;
+
+            if (newHeight > 700) {
+                newHeight = 700;
+                newWidth = newHeight * aspectRatio;
+            }
+
+            canvas.width = newWidth;
+            canvas.height = newHeight;
+
+            // canvas.width = img.width;
+            // canvas.height = img.height;
+
+            ctx.drawImage(img, 0, 0, newWidth, newHeight);
+            // ctx.drawImage(img, 0, 0);
             enableClickToGetColor(canvas, ctx);
             generateColorPalette(img);
         };
